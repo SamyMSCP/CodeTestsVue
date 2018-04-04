@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>VueJS Tutorials</title>
+        <link href="styles.css" rel="stylesheet" />
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <p>- Hey, my name is {{ name }} !</p>
+            <p>  Quel age avez vous ? </p>
+            <br>
+            <button @click="add(10)">+10</button>
+            <button @click="add(1)">+</button>
+            <button @click="less(1)">-</button>
+            <button @click="less(10)">-10</button>
+
+
+            <p>-J'ai {{age2 }} ans.</p>
+            <p>voulez vous aller sur mon site ?</p>
+            <a @click="click" href="http://www.elayachi.fr"> Site de Samy</a>
+
+            <p>ajouter à A ou B ?</p>
+            <button @click="a++">Ajouter à A</button>
+            <button @click="b++">Ajouter à B</button>
+
+            <p>A - {{a}}</p>
+            <p>B - {{b}}</p>
+            <p>Age + A = {{addToA}}</p>
+            <p>Age + B = {{addToB}}</p>
+            <div id="canvas" @mousemove="updateXY">{{x}}, {{y}}</div>
+            <p>----------------------------------KeyBoard events----------------------------------------</p>
+            <br>
+            <label>Name:</label>
+            <input type="text" v-model="name"/>
+            <label>Age:</label>
+            <input type="text" v-model="age"/>
+            <br>
+            <h4>Je m'appelle {{name}} et j'ai {{age}}!</h4>
+            <p>----------------------------------Dynamic CSS----------------------------------------</p>
+            <br>
+            <h2>Example 1</h2>
+            <div @click="available = !available" v-bind:class="{available:available}">
+                <span>Samy</span>
+            </div>
+
+            <h2>Example 2</h2>
+            <button v-on:click="nearby= !nearby">Toggle Nearby</button>
+            <button v-on:click="available= !available">Toggle Nearby</button>
+            <div v-bind:class="compClasses">
+                <span>Samy</span>
+            </div>
+
+        </div>
+    </body>
+
+    <script src="app.js"></script>
+</html>
